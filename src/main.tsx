@@ -10,6 +10,7 @@ import { HomeScreen } from './HomeScreen.tsx';
 import { GameScreen } from './GameScreen.tsx';
 import { OrgChart } from './OrgChart.tsx';
 import { GlobeDemo } from './NYCGlobe.tsx';
+import SalesPipeline from './pages/SalesPipeline.tsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/orgchart",
         element: <OrgChart />,
+      },
+      {
+        path: "/salespipeline",
+        element: <SalesPipeline />,
       },
       {
         path: "/nyc",
