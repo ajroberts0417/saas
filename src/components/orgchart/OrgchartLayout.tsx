@@ -1,4 +1,4 @@
-import { Office, Scoreboard, Shop } from "../../data/orgchart";
+import { Office, Scoreboard, Shop } from "../../data/orgchart/types";
 import Announcements from "./Announcements";
 import OfficeComponent from "./Office";
 import ScoreboardComponent from "./Scoreboard";
