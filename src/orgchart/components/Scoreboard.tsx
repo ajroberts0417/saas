@@ -1,4 +1,4 @@
-import AnimatedCircularProgressBar from "../ui/animated-circular-progress-bar";
+import AnimatedCircularProgressBar from "../../components/ui/animated-circular-progress-bar";
 import type { Scoreboard } from "../data/types";
 
 interface ScoreboardComponentProps {
