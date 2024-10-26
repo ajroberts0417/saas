@@ -1,4 +1,3 @@
-
 // you are running a hybrid-remote SaaS company in NYC.
 // your employees don't all come in every day, because it's hybrid, so they can choose to come into work or not.
 // every round there is a work day, where employees come into the office one at a time and get work done.
@@ -12,9 +11,7 @@
 // there are 25 rounds in the game, you start with 8 employees in the deck.
 // and you start with 4 slots at the office.
 
-
 // your goal is to grow your company and IPO.
-
 
 // if you have too much trouble... you get shut down by the New York Times! haha
 // SCANDAL: BREAKING: <SAAS> slammed for unethical practices
@@ -23,36 +20,40 @@
 
 // okay so you never make money (lol), you just gain either customers
 // or you gain reputation
-export const allEmployees: AllEmployees = {
-
-};
+export const allEmployees: AllEmployees = {};
 
 export type AllEmployees = Record<string, Employee>;
 
-
 export type OrgChart = Employee[];
 
-
-export type EmployeeType = "normie" | "unethical" | "techbro" | "hipster" | "hipsterTechbro";
+export type EmployeeType =
+  | "normie"
+  | "unethical"
+  | "techbro"
+  | "hipster"
+  | "hipsterTechbro"
+  | "CEO"
+  | "HR";
 
 export interface Employee {
-    type: EmployeeType;
-    cash: number;
-    culture: number; //
-    trouble: boolean;
-    activeAbility?: ActiveAbility;
-    enterAbility?: EnterAbility;
-    onScoreAbility?: OnScoreAbility;
+  name: string;
+  type: EmployeeType;
+  cash: number;
+  culture: number; //
+  trouble: boolean;
+  activeAbility?: ActiveAbility;
+  enterAbility?: EnterAbility;
+  onScoreAbility?: OnScoreAbility;
 }
 
 // Potential Hires show up in the shop NOT in the game.
 export interface PotentialHire extends Employee {
-    cost: number; // cost to hire this employee in dollars
-    numberRemaining: number; // how many of this employee are left in the shop
+  cost: number; // cost to hire this employee in dollars
+  numberRemaining: number; // how many of this employee are left in the shop
 }
 
 export interface OfficeEmployee extends Employee {
-    id: string;
+  id: string;
 }
 
 // e.g.
@@ -70,33 +71,42 @@ export interface OfficeEmployee extends Employee {
 // }
 export type Shop = Record<EmployeeType, PotentialHire>;
 
-
 export interface Ability {
-    name: string;
-    type: "active" | "enter" | "onScore";
-    description: string;
-    effect: (employee: Employee, gameState: GameState) => GameState;
+  name: string;
+  type: "active" | "enter" | "onScore";
+  description: string;
+  effect: (employee: Employee, gameState: GameState) => GameState;
 }
 
-export type EnterAbilities = "permanentIncreaseScore" | "reduceTrouble" | "inviteGuest" | "inviteTwoGuests";
+export type EnterAbilities =
+  | "permanentIncreaseScore"
+  | "reduceTrouble"
+  | "inviteGuest"
+  | "inviteTwoGuests";
 
 export interface EnterAbility extends Ability {
-    name: EnterAbilities;
-    type: "enter";
+  name: EnterAbilities;
+  type: "enter";
 }
 
-export type ActiveAbilities = "bootGuest" | "scry" | "letGuestIn" | "scoreGuest" | "refreshAbilities" | "increaseCulture";
+export type ActiveAbilities =
+  | "bootGuest"
+  | "scry"
+  | "letGuestIn"
+  | "scoreGuest"
+  | "refreshAbilities"
+  | "increaseCulture";
 
 export interface ActiveAbility extends Ability {
-    name: ActiveAbilities;
-    type: "active";
+  name: ActiveAbilities;
+  type: "active";
 }
 
 export type OnScoreAbilities = "gainPopularityForTrouble" | "gainPopularityForNormie";
 
 export interface OnScoreAbility extends Ability {
-    name: OnScoreAbilities;
-    type: "onScore";
+  name: OnScoreAbilities;
+  type: "onScore";
 }
 
 /*
