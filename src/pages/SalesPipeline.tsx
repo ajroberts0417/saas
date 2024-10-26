@@ -71,10 +71,14 @@ export function SalesPipeline() {
                 }}
               />
             )}
-            {game.map.activeLeads.find(
-              (lead) =>
-                Math.floor(lead.pathPosition) === game.map.path.indexOf(index)
-            ) && (
+            {game.map.activeLeads.find((lead) => {
+              const pathIndex = Math.floor(lead.pathPosition);
+              return (
+                pathIndex >= 0 &&
+                pathIndex < game.map.path.length &&
+                game.map.path[pathIndex] === index
+              );
+            }) && (
               <div
                 style={{
                   width: "50%",
