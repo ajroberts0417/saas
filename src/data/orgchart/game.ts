@@ -3,7 +3,7 @@
 // every round there is a work day, where employees come into the office one at a time and get work done.
 // after every round there is a "recruiting" round, where you can hire new employees and "improve the morale" of the company.
 // then the next work day happens.
-import { AllEmployees, Game, GameElement, GameText, OrgChart, Shop } from "./types";
+import { AllEmployees, Game, GameElement, GameText, OfficeEmployee, Shop } from "./types";
 import techBroAvatar from '../../assets/techbro.png';
 import normieAvatar from '../../assets/normie.png';
 
@@ -122,52 +122,51 @@ export const initialShop: Shop = {
     },
 };
 
-const initialOrgchart: OrgChart = [
-    {
+const initialOrgchart: Record<string, OfficeEmployee> = {
+    "normie1": {
         id: "normie1",
         ...allEmployees.normie,
     },
-    {
+    "normie2": {
         id: "normie2",
         ...allEmployees.normie,
     },
-    {
+    "normie3": {
         id: "normie3",
         ...allEmployees.normie,
     },
-    {
+    "unethical1": {
         id: "unethical1",
         ...allEmployees.unethical,
     },
-    {
+    "unethical2": {
         id: "unethical2",
         ...allEmployees.unethical,
     },
-    {
+    "unethical3": {
         id: "unethical3",
         ...allEmployees.unethical,
     },
-    {
+    "techbro1": {
         id: "techbro1",
         ...allEmployees.techbro,
     },
-    {
+    "techbro2": {
         id: "techbro2",
         ...allEmployees.techbro,
     },
-    {
+    "techbro3": {
         id: "techbro3",
         ...allEmployees.techbro,
     },
-
-];
+};
 
 export const initialText: GameText = { color: "white", text: "Test Announcement!" };
 
 export const initialGame: Game = {
     shop: initialShop,
     orgchart: initialOrgchart,
-    office: { employees: [] },
+    office: { employeesAtOffice: [], employeesAtHome: [...Object.keys(initialOrgchart)] },
     scoreboard: { cash: 0, popularityScore: 0, roundNumber: 0, stars: 0 },
     selectedElement: null,
     announcement: initialText,
