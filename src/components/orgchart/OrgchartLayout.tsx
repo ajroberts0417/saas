@@ -1,41 +1,34 @@
-import { Office, Scoreboard, Shop } from "../../data/orgchart/types";
-import Announcements from "./Announcements";
+import { Game } from "../../data/orgchart/types";
+import Announcement from "./Announcement";
 import OfficeComponent from "./Office";
 import ScoreboardComponent from "./Scoreboard";
-import ShopComponent from "./Shop";
-import Tooltip from "./Tooltip";
+
+import TooltipComponent from "./Tooltip";
 
 interface OrgchartLayoutProps {
-  office?: Office;
-  shop?: Shop;
-  scoreboard: Scoreboard;
-  announcements: string[];
-  tooltip: string[];
+  game: Game;
 }
 
-const OrgchartLayout = ({
-  office,
-  shop,
-  scoreboard,
-  announcements,
-  tooltip,
-}: OrgchartLayoutProps) => {
+const OrgchartLayout = ({ game }: OrgchartLayoutProps) => {
   // Add ability
 
   return (
-    <div className="flex">
-      {/* Office or Shop */}
-      {office && <OfficeComponent office={office} />}
-      {/* {shop && !office && <ShopComponent shop={shop} />} */}
+    <div className="flex flex-col">
+      <div className="flex">
+        {/* Office or Shop */}
+        {game.office && <OfficeComponent office={game.office} />}
+        {/* {shop && !office && <ShopComponent shop={shop} />} */}
 
-      {/* Scoreboard */}
-      <ScoreboardComponent scoreboard={scoreboard} />
+        {/* Scoreboard */}
+        <ScoreboardComponent scoreboard={game.scoreboard} />
+      </div>
+      <div className="flex">
+        {/* Announcements */}
+        <Announcement announcement={game.announcement} />
 
-      {/* Announcements */}
-      <Announcements />
-
-      {/* Tooltip */}
-      <Tooltip />
+        {/* Tooltip */}
+        <TooltipComponent tooltip={game.tooltip} />
+      </div>
     </div>
   );
 };

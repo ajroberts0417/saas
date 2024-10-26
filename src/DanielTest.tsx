@@ -1,22 +1,11 @@
 import OrgchartLayout from "./components/orgchart/OrgchartLayout";
-import {
-  dummyAnnouncements,
-  dummyOffice,
-  dummyScoreboard,
-  dummyShop,
-  dummyTooltip,
-} from "./dummyData";
+
+import { initialGame } from "./data/orgchart/game";
 
 const DanielTest = () => {
   return (
     <div>
-      <OrgchartLayout
-        office={dummyOffice}
-        shop={dummyShop}
-        scoreboard={dummyScoreboard}
-        announcements={dummyAnnouncements}
-        tooltip={dummyTooltip}
-      />
+      <OrgchartLayout game={initialGame} />
     </div>
   );
 };
