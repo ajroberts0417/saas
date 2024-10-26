@@ -1,7 +1,12 @@
-// Employee Component.
-
 import type { Employee } from "../data/types";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
 
 interface EmployeeComponentProps {
   employee: Employee;
