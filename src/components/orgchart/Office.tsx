@@ -1,9 +1,8 @@
-import { Office, Scoreboard } from "../../data/orgchart/types";
+import { Office } from "../../data/orgchart/types";
 import EmployeeComponent from "./Employee";
 
 interface OfficeComponents {
   office: Office;
-  scoreboard: Scoreboard;
 }
 
 const OfficeComponent = ({ office }: OfficeComponents) => {
