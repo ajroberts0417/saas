@@ -1,7 +1,7 @@
 // THIS SHOULD BE A TOAST!!!
 // using shadcn/ui toast
 
-import { GameText } from "../../data/orgchart/types";
+import { GameText } from "../data/types";
 
 interface AnnoucementProps {
   announcement: GameText;

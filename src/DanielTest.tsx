@@ -1,6 +1,6 @@
 import OrgchartLayout from "./components/orgchart/OrgchartLayout";
 
-import { initialGame } from "./data/orgchart/game";
+import { initialGame } from "./orgchart/data/game";
 
 const DanielTest = () => {
   return (

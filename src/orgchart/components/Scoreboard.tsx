@@ -1,5 +1,5 @@
 import AnimatedCircularProgressBar from "../ui/animated-circular-progress-bar";
-import type { Scoreboard } from "../../data/orgchart/types";
+import type { Scoreboard } from "../data/types";
 
 interface ScoreboardComponentProps {
   scoreboard: Scoreboard;

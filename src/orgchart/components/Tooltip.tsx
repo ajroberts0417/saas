@@ -1,6 +1,6 @@
 // this should be the bottom right, floating tooltip that tells us what's going on in the game.
 
-import { TooltipInfo } from "../../data/orgchart/types";
+import { TooltipInfo } from "../data/types";
 
 interface TooltipComponentProps {
   tooltip: TooltipInfo;
