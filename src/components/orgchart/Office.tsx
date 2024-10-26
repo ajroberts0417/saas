@@ -1,11 +1,6 @@
-import { Employee } from "../../data/orgchart";
+import { Office } from "../../data/orgchart";
 import EmployeeComponent from "./Employee";
-import ScoreboardComponent, { Scoreboard } from "./Scoreboard";
-
-type Office = {
-  employees: Employee[];
-  scoreboard: Scoreboard;
-};
+import ScoreboardComponent from "./Scoreboard";
 
 interface OfficeComponents {
   office: Office;
