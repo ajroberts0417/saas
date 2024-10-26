@@ -1,5 +1,4 @@
-import EmployeeComponent from "./components/orgchart/Employee";
-import PotentialHireComponent from "./components/orgchart/PotentialHire";
+import Shop from "./components/orgchart/Shop";
 import { Employee, PotentialHire } from "./data/orgchart";
 
 export const employees: Employee[] = [
@@ -108,13 +107,8 @@ export const potentialHires: PotentialHire[] = [
 
 const DanielTest = () => {
   return (
-    <div className="max-w-96">
-      {/* {employees.map((employee, key) => (
-        <EmployeeComponent key={key} employee={employee} />
-      ))} */}
-      {potentialHires.map((hire, key) => (
-        <PotentialHireComponent key={key} potentialHire={hire} />
-      ))}
+    <div>
+      <Shop potentialHires={potentialHires} />
     </div>
   );
 };
