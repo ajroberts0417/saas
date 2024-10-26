@@ -3,12 +3,9 @@
 // every round there is a work day, where employees come into the office one at a time and get work done.
 // after every round there is a "recruiting" round, where you can hire new employees and "improve the morale" of the company.
 // then the next work day happens.
-
-import { AllEmployees, Game, GameElement, GameText, Shop } from "./types";
+import { AllEmployees, Game, GameElement, GameText, OrgChart, Shop } from "./types";
 import techBroAvatar from '../../assets/techbro.png';
 import normieAvatar from '../../assets/normie.png';
-
-
 
 // there are employees who are "unethical" and will do anything to get ahead.
 // if you draw 3 of them in the office, the NYT will write a scandal piece and you're slammed in the news.
@@ -125,17 +122,57 @@ export const initialShop: Shop = {
     },
 };
 
+const initialOrgchart: OrgChart = [
+    {
+        id: "normie1",
+        ...allEmployees.normie,
+    },
+    {
+        id: "normie2",
+        ...allEmployees.normie,
+    },
+    {
+        id: "normie3",
+        ...allEmployees.normie,
+    },
+    {
+        id: "unethical1",
+        ...allEmployees.unethical,
+    },
+    {
+        id: "unethical2",
+        ...allEmployees.unethical,
+    },
+    {
+        id: "unethical3",
+        ...allEmployees.unethical,
+    },
+    {
+        id: "techbro1",
+        ...allEmployees.techbro,
+    },
+    {
+        id: "techbro2",
+        ...allEmployees.techbro,
+    },
+    {
+        id: "techbro3",
+        ...allEmployees.techbro,
+    },
+
+];
+
 export const initialText: GameText = { color: "white", text: "Test Announcement!" };
 
 export const initialGame: Game = {
     shop: initialShop,
+    orgchart: initialOrgchart,
     office: { employees: [] },
     scoreboard: { cash: 0, popularityScore: 0, roundNumber: 0, stars: 0 },
     selectedElement: null,
     announcement: initialText,
     tooltip: { title: "Tooltip Title", description: [initialText] },
 };
-
 
 export function selectElement(gameElement: GameElement, game: Game): Game {
     return {

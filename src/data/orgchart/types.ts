@@ -1,6 +1,6 @@
 export type AllEmployees = Record<EmployeeType, Employee>;
 
-export type OrgChart = Employee[];
+export type OrgChart = OfficeEmployee[];
 
 export type EmployeeType =
     | "normie"
@@ -101,6 +101,7 @@ export interface GameElement {
 export type Shop = Record<EmployeeType, PotentialHire>;
 export type Game = {
     shop: Shop;
+    orgchart: OrgChart;
     office: Office;
     scoreboard: Scoreboard;
     selectedElement: GameElement | null;
