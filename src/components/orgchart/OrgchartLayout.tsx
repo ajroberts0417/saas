@@ -1,6 +1,7 @@
 import { Office, Scoreboard, Shop } from "../../data/orgchart";
 import Announcements from "./Announcements";
 import OfficeComponent from "./Office";
+import ScoreboardComponent from "./Scoreboard";
 import ShopComponent from "./Shop";
 import Tooltip from "./Tooltip";
 
@@ -22,12 +23,13 @@ const OrgchartLayout = ({
   // Add ability
 
   return (
-    <div>
+    <div className="flex">
       {/* Office or Shop */}
       {office && <OfficeComponent office={office} />}
-      {shop && <ShopComponent />}
+      {/* {shop && !office && <ShopComponent shop={shop} />} */}
 
       {/* Scoreboard */}
+      <ScoreboardComponent scoreboard={scoreboard} />
 
       {/* Announcements */}
       <Announcements />
