@@ -108,6 +108,7 @@ export type Shop = Record<EmployeeType, PotentialHire>;
 export type Game = {
     shop: Shop;
     orgchart: OrgChart;
+    phase: "shop" | "office";
     office: Office;
     scoreboard: Scoreboard;
     selectedElement: GameElement | null;

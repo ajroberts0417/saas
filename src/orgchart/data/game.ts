@@ -194,6 +194,7 @@ export const initialText: GameText = { color: "white", text: "Test Announcement!
 export const initialGame: Game = {
     shop: initialShop,
     orgchart: initialOrgchart,
+    phase: "shop",
     office: { employeesAtOffice: [], employeesAtHome: [...Object.keys(initialOrgchart)] },
     scoreboard: { cash: 0, popularityScore: 0, roundNumber: 0, stars: 0 },
     selectedElement: null,
