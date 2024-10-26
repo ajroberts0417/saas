@@ -35,7 +35,10 @@ type AllEmployees = Record<string, Employee>;
 type OrgChart = Employee[];
 
 
+type EmployeeType = "normie" | "unethical" | "techbro" | "hipster" | "hipsterTechbro";
+
 interface Employee {
+    type: EmployeeType;
     cash: number;
     culture: number; //
     trouble: boolean;
@@ -43,6 +46,32 @@ interface Employee {
     enterAbility?: EnterAbility;
     onScoreAbility?: OnScoreAbility;
 }
+
+// Potential Hires show up in the shop NOT in the game.
+interface PotentialHire extends Employee {
+    cost: number; // cost to hire this employee in dollars
+    numberRemaining: number; // how many of this employee are left in the shop
+}
+
+interface OfficeEmployee extends Employee {
+    id: string;
+}
+
+// e.g.
+// {
+//     normie: {
+//         ...allEmployees.normie
+//         cost: 100,
+//         numberRemaining: 4,
+//     },
+//     unethical: {
+//         cost: 100,
+//         numberRemaining: 4,
+//     },
+// ...
+// }
+type Shop = Record<EmployeeType, PotentialHire>;
+
 
 interface Ability {
     name: string;
