@@ -8,6 +8,7 @@
       "path": "./tsconfig.node.json"
     }
   ],
+  "moduleResolution": "node",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
