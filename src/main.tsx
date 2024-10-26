@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -9,6 +8,8 @@ import {
 import Root from './layout/Root.tsx';
 import { HomeScreen } from './HomeScreen.tsx';
 import { GameScreen } from './GameScreen.tsx';
+import { OrgChart } from './OrgChart.tsx';
+import { GlobeDemo } from './NYCGlobe.tsx';
 
 const router = createBrowserRouter([
   {
@@ -16,12 +17,20 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <HomeScreen />,
       },
       {
         path: "/game",
         element: <GameScreen />,
+      },
+      {
+        path: "/",
+        element: <OrgChart />,
+      },
+      {
+        path: "/nyc",
+        element: <GlobeDemo />,
       },
     ],
   },
