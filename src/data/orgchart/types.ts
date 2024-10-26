@@ -1,6 +1,14 @@
+export interface GameElement {
+    tooltipInfo: TooltipInfo;
+}
+
 export type AllEmployees = Record<EmployeeType, Employee>;
 
-export type OrgChart = Employee[];
+
+export type EmployeeID = string;
+
+// record from employee id to OfficeEmployee
+export type OrgChart = Record<EmployeeID, OfficeEmployee>;
 
 export type EmployeeType =
     | "normie"
@@ -11,7 +19,7 @@ export type EmployeeType =
     | "CEO"
     | "HR";
 
-export interface Employee {
+export interface Employee extends GameElement {
     name: string;
     avatarUrl: string;
     type: EmployeeType;
@@ -80,7 +88,9 @@ export type Scoreboard = {
 // if you ever get 4 stars and end the party, you win!!
 
 export type Office = {
-    employees: Employee[];
+    // together these make up all the employees in the OrgChart
+    employeesAtOffice: EmployeeID[];
+    employeesAtHome: EmployeeID[];
 };
 
 export type GameText = {
@@ -93,14 +103,11 @@ export type TooltipInfo = {
     description: GameText[]; // array of game text to be rendered line by line.
 };
 
-export interface GameElement {
-    tooltipInfo: TooltipInfo;
-}
-
 
 export type Shop = Record<EmployeeType, PotentialHire>;
 export type Game = {
     shop: Shop;
+    orgchart: OrgChart;
     office: Office;
     scoreboard: Scoreboard;
     selectedElement: GameElement | null;
