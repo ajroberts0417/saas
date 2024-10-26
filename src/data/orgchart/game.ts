@@ -29,9 +29,13 @@ export const allEmployees: AllEmployees = {
         name: "Sarah",
         avatarUrl: normieAvatar,
         type: "normie",
-        cash: 1,
-        culture: 0,
+        cash: 0,
+        culture: 1,
         trouble: false,
+        tooltipInfo: {
+            title: "Normie",
+            description: [{ color: "yellow", text: "+1 Culture" }],
+        },
     },
     unethical: {
         name: "John",
@@ -40,14 +44,22 @@ export const allEmployees: AllEmployees = {
         cash: 1,
         culture: 2,
         trouble: true,
+        tooltipInfo: {
+            title: "Unethical",
+            description: [{ color: "white", text: "trouble" }, { color: "green", text: "+1 Cash" }, { color: "yellow", text: "+2 Culture" }],
+        },
     },
     techbro: {
         name: "Jim",
         avatarUrl: techBroAvatar,
         type: "techbro",
         cash: 1,
-        culture: 2,
-        trouble: true,
+        culture: 0,
+        trouble: false,
+        tooltipInfo: {
+            title: "Techbro",
+            description: [{ color: "green", text: "+1 Cash" }],
+        },
     },
     hipster: {
         name: "Jill",
@@ -56,6 +68,10 @@ export const allEmployees: AllEmployees = {
         cash: 1,
         culture: 2,
         trouble: true,
+        tooltipInfo: {
+            title: "Hipster",
+            description: [{ color: "white", text: "trouble" }, { color: "green", text: "+1 Cash" }, { color: "yellow", text: "+2 Culture" }],
+        },
     },
     hipsterTechbro: {
         name: "Hank",
@@ -64,6 +80,10 @@ export const allEmployees: AllEmployees = {
         cash: 1,
         culture: 2,
         trouble: true,
+        tooltipInfo: {
+            title: "Hipster Techbro",
+            description: [{ color: "white", text: "trouble" }, { color: "green", text: "+1 Cash" }, { color: "yellow", text: "+2 Culture" }],
+        },
     },
     CEO: {
         name: "Catherine",
@@ -72,6 +92,10 @@ export const allEmployees: AllEmployees = {
         cash: 1,
         culture: 2,
         trouble: true,
+        tooltipInfo: {
+            title: "CEO",
+            description: [{ color: "white", text: "trouble" }, { color: "green", text: "+1 Cash" }, { color: "yellow", text: "+2 Culture" }],
+        },
     },
     HR: {
         name: "Frank",
@@ -80,6 +104,10 @@ export const allEmployees: AllEmployees = {
         cash: 1,
         culture: 2,
         trouble: true,
+        tooltipInfo: {
+            title: "HR",
+            description: [{ color: "white", text: "trouble" }, { color: "green", text: "+1 Cash" }, { color: "yellow", text: "+2 Culture" }],
+        },
     },
 };
 
