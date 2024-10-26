@@ -1,5 +1,6 @@
 import Shop from "./components/orgchart/Shop";
 import { Employee, PotentialHire } from "./data/orgchart";
+import ScoreboardComponent from "./components/orgchart/Scoreboard";
 
 export const employees: Employee[] = [
   {
@@ -105,10 +106,30 @@ export const potentialHires: PotentialHire[] = [
   },
 ];
 
+import { Scoreboard } from "./components/orgchart/Scoreboard";
+
+const dummyScoreboard: Scoreboard = {
+  scores: [
+    { cash: 1200, popularityScore: 80, roundNumber: 1 },
+    { cash: 1500, popularityScore: 85, roundNumber: 2 },
+    { cash: 2000, popularityScore: 90, roundNumber: 3 },
+    { cash: 2500, popularityScore: 95, roundNumber: 4 },
+    { cash: 3000, popularityScore: 98, roundNumber: 5 },
+    { cash: 3400, popularityScore: 100, roundNumber: 6 },
+    { cash: 3800, popularityScore: 105, roundNumber: 7 },
+  ],
+};
+
+// Usage
+{
+  /* <ScoreboardComponent scoreboard={dummyScoreboard} />; */
+}
+
 const DanielTest = () => {
   return (
     <div>
-      <Shop potentialHires={potentialHires} />
+      {/* <Shop potentialHires={potentialHires} /> */}
+      <ScoreboardComponent scoreboard={dummyScoreboard} />
     </div>
   );
 };

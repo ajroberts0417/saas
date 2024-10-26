@@ -109,6 +109,17 @@ export interface OnScoreAbility extends Ability {
   type: "onScore";
 }
 
+export type Scoreboard = {
+  cash: number;
+  popularityScore: number;
+  roundNumber: number;
+};
+
+export type Office = {
+  employees: Employee[];
+  scoreboard: Scoreboard;
+};
+
 /*
 units have:
 - popularity (number)
