@@ -80,7 +80,7 @@ export type Scoreboard = {
 // if you ever get 4 stars and end the party, you win!!
 
 export type Office = {
-    employees: Employee[];
+    employees: OfficeEmployee[];
 };
 
 export type GameText = {
