@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <HomeScreen />,
       },
       {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <GameScreen />,
       },
       {
-        path: "/",
+        path: "/orgchart",
         element: <OrgChart />,
       },
       {
