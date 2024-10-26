@@ -1,11 +1,11 @@
 import { PotentialHire } from "../../data/orgchart";
 import PotentialHireComponent from "./PotentialHire";
 
-interface ShopProps {
+interface ShopComponentProps {
   potentialHires: PotentialHire[];
 }
 
-const Shop = ({ potentialHires }: ShopProps) => {
+const ShopComponent = ({ potentialHires }: ShopComponentProps) => {
   return (
     <div className="w-full flex justify-center space-x-2 p-6">
       {potentialHires.map((hire, key) => (
@@ -15,4 +15,4 @@ const Shop = ({ potentialHires }: ShopProps) => {
   );
 };
 
-export default Shop;
+export default ShopComponent;
