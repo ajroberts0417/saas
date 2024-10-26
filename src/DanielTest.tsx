@@ -1,5 +1,5 @@
 import ShopComponent from "./components/orgchart/Shop";
-import { Employee, PotentialHire } from "./data/orgchart";
+import { Employee, PotentialHire } from "./data/orgchart/types";
 import ScoreboardComponent from "./components/orgchart/Scoreboard";
 
 export const dummyEmployees: Employee[] = [
@@ -106,7 +106,7 @@ export const potentialHires: PotentialHire[] = [
   },
 ];
 
-import type { Office, Scoreboard } from "./data/orgchart";
+import type { Office, Scoreboard } from "./data/orgchart/types";
 import OfficeComponent from "./components/orgchart/Office";
 
 const dummyScoreboard: Scoreboard = {
