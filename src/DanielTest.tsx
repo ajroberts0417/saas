@@ -1,5 +1,6 @@
 import EmployeeComponent from "./components/orgchart/Employee";
-import { Employee } from "./data/orgchart";
+import PotentialHireComponent from "./components/orgchart/PotentialHire";
+import { Employee, PotentialHire } from "./data/orgchart";
 
 export const employees: Employee[] = [
   {
@@ -39,11 +40,80 @@ export const employees: Employee[] = [
   },
 ];
 
+export const potentialHires: PotentialHire[] = [
+  {
+    name: "Zane Wilder",
+    type: "normie",
+    cash: 2000,
+    culture: 40,
+    trouble: false,
+    cost: 1000,
+    numberRemaining: 5,
+  },
+  {
+    name: "Olivia Black",
+    type: "unethical",
+    cash: 3500,
+    culture: 15,
+    trouble: true,
+    cost: 1500,
+    numberRemaining: 2,
+  },
+  {
+    name: "Liam Torres",
+    type: "techbro",
+    cash: 6000,
+    culture: 65,
+    trouble: false,
+    cost: 3000,
+    numberRemaining: 3,
+  },
+  {
+    name: "Amelia White",
+    type: "hipster",
+    cash: 2500,
+    culture: 85,
+    trouble: false,
+    cost: 1200,
+    numberRemaining: 4,
+  },
+  {
+    name: "Miles Young",
+    type: "hipsterTechbro",
+    cash: 7000,
+    culture: 90,
+    trouble: true,
+    cost: 4500,
+    numberRemaining: 1,
+  },
+  {
+    name: "Samantha Gray",
+    type: "CEO",
+    cash: 12000,
+    culture: 60,
+    trouble: false,
+    cost: 8000,
+    numberRemaining: 2,
+  },
+  {
+    name: "Harper Lee",
+    type: "HR",
+    cash: 4000,
+    culture: 75,
+    trouble: false,
+    cost: 2000,
+    numberRemaining: 6,
+  },
+];
+
 const DanielTest = () => {
   return (
     <div className="max-w-96">
-      {employees.map((employee, key) => (
+      {/* {employees.map((employee, key) => (
         <EmployeeComponent key={key} employee={employee} />
+      ))} */}
+      {potentialHires.map((hire, key) => (
+        <PotentialHireComponent key={key} potentialHire={hire} />
       ))}
     </div>
   );
