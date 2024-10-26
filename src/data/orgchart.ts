@@ -1,5 +1,4 @@
 
-
 // you are running a hybrid-remote SaaS company in NYC.
 // your employees don't all come in every day, because it's hybrid, so they can choose to come into work or not.
 // every round there is a work day, where employees come into the office one at a time and get work done.
@@ -24,20 +23,19 @@
 
 // okay so you never make money (lol), you just gain either customers
 // or you gain reputation
-
-const allEmployees: AllEmployees = {
+export const allEmployees: AllEmployees = {
 
 };
 
-type AllEmployees = Record<string, Employee>;
+export type AllEmployees = Record<string, Employee>;
 
 
-type OrgChart = Employee[];
+export type OrgChart = Employee[];
 
 
-type EmployeeType = "normie" | "unethical" | "techbro" | "hipster" | "hipsterTechbro";
+export type EmployeeType = "normie" | "unethical" | "techbro" | "hipster" | "hipsterTechbro";
 
-interface Employee {
+export interface Employee {
     type: EmployeeType;
     cash: number;
     culture: number; //
@@ -48,12 +46,12 @@ interface Employee {
 }
 
 // Potential Hires show up in the shop NOT in the game.
-interface PotentialHire extends Employee {
+export interface PotentialHire extends Employee {
     cost: number; // cost to hire this employee in dollars
     numberRemaining: number; // how many of this employee are left in the shop
 }
 
-interface OfficeEmployee extends Employee {
+export interface OfficeEmployee extends Employee {
     id: string;
 }
 
@@ -70,33 +68,33 @@ interface OfficeEmployee extends Employee {
 //     },
 // ...
 // }
-type Shop = Record<EmployeeType, PotentialHire>;
+export type Shop = Record<EmployeeType, PotentialHire>;
 
 
-interface Ability {
+export interface Ability {
     name: string;
     type: "active" | "enter" | "onScore";
     description: string;
     effect: (employee: Employee, gameState: GameState) => GameState;
 }
 
-type EnterAbilities = "permanentIncreaseScore" | "reduceTrouble" | "inviteGuest" | "inviteTwoGuests";
+export type EnterAbilities = "permanentIncreaseScore" | "reduceTrouble" | "inviteGuest" | "inviteTwoGuests";
 
-interface EnterAbility extends Ability {
+export interface EnterAbility extends Ability {
     name: EnterAbilities;
     type: "enter";
 }
 
-type ActiveAbilities = "bootGuest" | "scry" | "letGuestIn" | "scoreGuest" | "refreshAbilities" | "increaseCulture";
+export type ActiveAbilities = "bootGuest" | "scry" | "letGuestIn" | "scoreGuest" | "refreshAbilities" | "increaseCulture";
 
-interface ActiveAbility extends Ability {
+export interface ActiveAbility extends Ability {
     name: ActiveAbilities;
     type: "active";
 }
 
-type OnScoreAbilities = "gainPopularityForTrouble" | "gainPopularityForNormie";
+export type OnScoreAbilities = "gainPopularityForTrouble" | "gainPopularityForNormie";
 
-interface OnScoreAbility extends Ability {
+export interface OnScoreAbility extends Ability {
     name: OnScoreAbilities;
     type: "onScore";
 }
