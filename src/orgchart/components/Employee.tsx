@@ -1,6 +1,4 @@
 import type { Employee } from "../data/types";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar";
 import { GlareCard } from "../../components/ui/glare-card";
 
 interface EmployeeComponentProps {

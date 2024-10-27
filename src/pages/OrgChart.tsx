@@ -1,8 +1,5 @@
 import Game from "../orgchart/components/Game";
-<<<<<<< HEAD
 import { GameProvider } from "../orgchart/hooks/GameProvider";
-=======
->>>>>>> main
 
 export function OrgChart() {
   return (
