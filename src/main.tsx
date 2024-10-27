@@ -8,7 +8,6 @@ import { GameScreen } from "./GameScreen.tsx";
 import { OrgChart } from "./pages/OrgChart.tsx";
 import { GlobeDemo } from "./NYCGlobe.tsx";
 import SalesPipeline from "./pages/SalesPipeline.tsx";
-import DanielTest from "./DanielTest.tsx";
 
 const router = createBrowserRouter([
   {
@@ -34,10 +33,6 @@ const router = createBrowserRouter([
       {
         path: "/nyc",
         element: <GlobeDemo />,
-      },
-      {
-        path: "/danieltest",
-        element: <DanielTest />,
       },
     ],
   },

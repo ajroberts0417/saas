@@ -1,8 +1,10 @@
 import { createContext, useContext, useState, ReactNode } from "react";
+import { EmployeeID, Game, OfficeEmployee } from "../data/types";
+import { initialGame } from "../data/game";
 
 interface GameContextType {
-  getEmployee: () => void;
-  game: string;
+  getEmployee: (id: EmployeeID) => OfficeEmployee;
+  game: Game;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -18,8 +20,10 @@ export const useGame = () => {
 };
 
 export const GameProvider = ({ children }: { children: ReactNode }) => {
-  const [game, setGame] = useState("example game");
-  const getEmployee = () => {};
+  const [game, setGame] = useState<Game>(initialGame);
+  function getEmployee(id: EmployeeID) {
+    return game.orgchart[id];
+  }
 
   return <GameContext.Provider value={{ getEmployee, game }}>{children}</GameContext.Provider>;
 };
