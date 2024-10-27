@@ -68,7 +68,7 @@ const waves: Wave[] = [
       {
         id: "lead1",
         name: "John Doe",
-        pathPosition: 0,
+        pathPosition: -5,
         hp: 100,
         speed: 1,
         payment: 10,
@@ -76,7 +76,7 @@ const waves: Wave[] = [
       {
         id: "lead2",
         name: "Jane Smith",
-        pathPosition: 0,
+        pathPosition: -1,
         hp: 100,
         speed: 1,
         payment: 10,
@@ -100,7 +100,7 @@ const waves: Wave[] = [
         name: "Alice Brown",
         pathPosition: 0,
         hp: 150,
-        speed: 1.2,
+        speed: 1,
         payment: 15,
       },
       {
@@ -108,7 +108,7 @@ const waves: Wave[] = [
         name: "Charlie Davis",
         pathPosition: 0,
         hp: 150,
-        speed: 1.2,
+        speed: 1,
         payment: 15,
       },
       {
@@ -116,7 +116,7 @@ const waves: Wave[] = [
         name: "Eva White",
         pathPosition: 0,
         hp: 150,
-        speed: 1.2,
+        speed: 1,
         payment: 15,
       },
       {
@@ -124,7 +124,7 @@ const waves: Wave[] = [
         name: "Frank Miller",
         pathPosition: 0,
         hp: 150,
-        speed: 1.2,
+        speed: 1,
         payment: 15,
       },
     ],
@@ -138,7 +138,7 @@ const waves: Wave[] = [
         name: "Grace Lee",
         pathPosition: 0,
         hp: 200,
-        speed: 1.5,
+        speed: 1,
         payment: 20,
       },
       {
@@ -146,7 +146,7 @@ const waves: Wave[] = [
         name: "Henry Wilson",
         pathPosition: 0,
         hp: 200,
-        speed: 1.5,
+        speed: 1,
         payment: 20,
       },
       {
@@ -154,7 +154,7 @@ const waves: Wave[] = [
         name: "Ivy Taylor",
         pathPosition: 0,
         hp: 200,
-        speed: 1.5,
+        speed: 1,
         payment: 20,
       },
       {
@@ -162,7 +162,7 @@ const waves: Wave[] = [
         name: "Jack Anderson",
         pathPosition: 0,
         hp: 200,
-        speed: 1.5,
+        speed: 1,
         payment: 20,
       },
       {
@@ -170,7 +170,7 @@ const waves: Wave[] = [
         name: "Karen Martin",
         pathPosition: 0,
         hp: 200,
-        speed: 1.5,
+        speed: 1,
         payment: 20,
       },
     ],
@@ -197,6 +197,7 @@ export function startWave(game: Game): Game {
   const newActiveLeads = game.waves[game.currentWave].incomingLeads.map(
     (lead) => ({ ...lead })
   );
+  //Do all the leads become active right away?
   game.map.activeLeads = newActiveLeads;
 
   return {
@@ -209,6 +210,7 @@ export function startWave(game: Game): Game {
   };
 }
 
+//need to stagger the leads so they come in one at a time
 function moveLeads(game: Game): Game {
   const updatedLeads = game.map.activeLeads.map((lead) => ({
     ...lead,
@@ -232,3 +234,10 @@ function moveLeads(game: Game): Game {
 export function updateGame(game: Game): Game {
   return moveLeads(game);
 }
+
+//TODO:
+// - Add towers
+// - Add logic to check if leads have reached the end of the path
+// - Add logic to check if leads have been converted
+// - Add logic to check if leads have been lost
+// - Add logic to check if wave is complete

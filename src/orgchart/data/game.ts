@@ -3,7 +3,11 @@
 // every round there is a work day, where employees come into the office one at a time and get work done.
 // after every round there is a "recruiting" round, where you can hire new employees and "improve the morale" of the company.
 // then the next work day happens.
+<<<<<<< HEAD
 import { AllEmployees, Game, GameElement, GameText, OfficeEmployee, Shop } from "./types";
+=======
+import { AllEmployees, Game, GameElement, GameText, OfficeEmployee, PotentialHire, Shop } from "./types";
+>>>>>>> main
 import techBroAvatar from "../assets/techbro.png";
 import normieAvatar from "../assets/normie.png";
 
@@ -36,6 +40,7 @@ export const allEmployees: AllEmployees = {
       title: "Normie",
       description: [{ color: "yellow", text: "+1 Culture" }],
     },
+<<<<<<< HEAD
   },
   unethical: {
     name: "John",
@@ -51,6 +56,23 @@ export const allEmployees: AllEmployees = {
         { color: "green", text: "+1 Cash" },
         { color: "yellow", text: "+2 Culture" },
       ],
+=======
+    unethical: {
+        name: "John",
+        avatarUrl: normieAvatar,
+        type: "unethical",
+        cash: 1,
+        culture: 2,
+        trouble: true,
+        tooltipInfo: {
+            title: "Unethical",
+            description: [
+                { color: "white", text: "trouble" },
+                { color: "green", text: "+1 Cash" },
+                { color: "yellow", text: "+2 Culture" },
+            ],
+        },
+>>>>>>> main
     },
   },
   techbro: {
@@ -64,6 +86,7 @@ export const allEmployees: AllEmployees = {
       title: "Techbro",
       description: [{ color: "green", text: "+1 Cash" }],
     },
+<<<<<<< HEAD
   },
   hipster: {
     name: "Jill",
@@ -127,6 +150,71 @@ export const allEmployees: AllEmployees = {
         { color: "green", text: "+1 Cash" },
         { color: "yellow", text: "+2 Culture" },
       ],
+=======
+    hipster: {
+        name: "Jill",
+        avatarUrl: normieAvatar,
+        type: "hipster",
+        cash: 1,
+        culture: 2,
+        trouble: true,
+        tooltipInfo: {
+            title: "Hipster",
+            description: [
+                { color: "white", text: "trouble" },
+                { color: "green", text: "+1 Cash" },
+                { color: "yellow", text: "+2 Culture" },
+            ],
+        },
+    },
+    hipsterTechbro: {
+        name: "Hank",
+        avatarUrl: techBroAvatar,
+        type: "hipsterTechbro",
+        cash: 1,
+        culture: 2,
+        trouble: true,
+        tooltipInfo: {
+            title: "Hipster Techbro",
+            description: [
+                { color: "white", text: "trouble" },
+                { color: "green", text: "+1 Cash" },
+                { color: "yellow", text: "+2 Culture" },
+            ],
+        },
+    },
+    CEO: {
+        name: "Catherine",
+        avatarUrl: normieAvatar,
+        type: "CEO",
+        cash: 1,
+        culture: 2,
+        trouble: true,
+        tooltipInfo: {
+            title: "CEO",
+            description: [
+                { color: "white", text: "trouble" },
+                { color: "green", text: "+1 Cash" },
+                { color: "yellow", text: "+2 Culture" },
+            ],
+        },
+    },
+    HR: {
+        name: "Frank",
+        avatarUrl: techBroAvatar,
+        type: "HR",
+        cash: 1,
+        culture: 2,
+        trouble: true,
+        tooltipInfo: {
+            title: "HR",
+            description: [
+                { color: "white", text: "trouble" },
+                { color: "green", text: "+1 Cash" },
+                { color: "yellow", text: "+2 Culture" },
+            ],
+        },
+>>>>>>> main
     },
   },
 };
@@ -170,6 +258,7 @@ export const initialShop: Shop = {
 };
 
 const initialOrgchart: Record<string, OfficeEmployee> = {
+<<<<<<< HEAD
   normie1: {
     id: "normie1",
     ...allEmployees.normie,
@@ -206,11 +295,50 @@ const initialOrgchart: Record<string, OfficeEmployee> = {
     id: "techbro3",
     ...allEmployees.techbro,
   },
+=======
+    normie1: {
+        id: "normie1",
+        ...allEmployees.normie,
+    },
+    normie2: {
+        id: "normie2",
+        ...allEmployees.normie,
+    },
+    normie3: {
+        id: "normie3",
+        ...allEmployees.normie,
+    },
+    unethical1: {
+        id: "unethical1",
+        ...allEmployees.unethical,
+    },
+    unethical2: {
+        id: "unethical2",
+        ...allEmployees.unethical,
+    },
+    unethical3: {
+        id: "unethical3",
+        ...allEmployees.unethical,
+    },
+    techbro1: {
+        id: "techbro1",
+        ...allEmployees.techbro,
+    },
+    techbro2: {
+        id: "techbro2",
+        ...allEmployees.techbro,
+    },
+    techbro3: {
+        id: "techbro3",
+        ...allEmployees.techbro,
+    },
+>>>>>>> main
 };
 
 export const initialText: GameText = { color: "white", text: "Test Announcement!" };
 
 export const initialGame: Game = {
+<<<<<<< HEAD
   shop: initialShop,
   orgchart: initialOrgchart,
   office: { employeesAtOffice: [], employeesAtHome: [...Object.keys(initialOrgchart)] },
@@ -218,6 +346,16 @@ export const initialGame: Game = {
   selectedElement: null,
   announcement: initialText,
   tooltip: { title: "Tooltip Title", description: [initialText] },
+=======
+    shop: initialShop,
+    orgchart: initialOrgchart,
+    phase: "shop",
+    office: { employeesAtOffice: [], employeesAtHome: [...Object.keys(initialOrgchart)] },
+    scoreboard: { cash: 0, popularityScore: 0, roundNumber: 0, stars: 0 },
+    selectedElement: null,
+    announcement: initialText,
+    tooltip: { title: "Tooltip Title", description: [initialText] },
+>>>>>>> main
 };
 
 export function selectElement(gameElement: GameElement, game: Game): Game {
@@ -234,3 +372,29 @@ export function updateAnnouncement(announcement: GameText, game: Game): Game {
     announcement,
   };
 }
+<<<<<<< HEAD
+=======
+
+export function hireEmployee(employee: PotentialHire, game: Game): Game {
+    return {
+        ...game,
+        shop: { ...game.shop, [employee.type]: { ...game.shop[employee.type], numberRemaining: game.shop[employee.type].numberRemaining - 1 } },
+    };
+}
+
+export function endShopPhase(game: Game): Game {
+    return updatePhase("office", game);
+}
+
+export function endOfficePhase(game: Game): Game {
+    // we need to calculate the score for the day.
+    return updatePhase("shop", game);
+}
+
+function updatePhase(phase: "shop" | "office", game: Game): Game {
+    return {
+        ...game,
+        phase,
+    };
+}
+>>>>>>> main
