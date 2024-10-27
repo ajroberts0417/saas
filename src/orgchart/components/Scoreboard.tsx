@@ -6,10 +6,9 @@ interface ScoreboardComponentProps {
 }
 
 const ScoreboardComponent = ({ scoreboard }: ScoreboardComponentProps) => {
-  console.log("test");
   return (
     <div>
-      <div>Cash</div>
+      <div>Round</div>
       <AnimatedCircularProgressBar
         max={100}
         min={0}
@@ -25,7 +24,7 @@ const ScoreboardComponent = ({ scoreboard }: ScoreboardComponentProps) => {
         gaugePrimaryColor="rgb(79 70 229)"
         gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
       />
-      <div>Cash</div>
+      <div>Popularity</div>
       <AnimatedCircularProgressBar
         max={100}
         min={0}

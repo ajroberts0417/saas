@@ -1,4 +1,16 @@
 import OrgchartLayout from "../layout/OrgchartLayout";
+<<<<<<< HEAD
+import { useGame } from "../hooks/GameProvider";
+import ShopComponent from "./Shop";
+
+const Game = () => {
+  const { game } = useGame();
+  const { scoreboard, announcement, tooltip, shop } = game;
+  return (
+    <OrgchartLayout scoreboard={scoreboard} announcement={announcement} tooltip={tooltip}>
+      <ShopComponent shop={shop} />
+    </OrgchartLayout>
+=======
 import { initialGame } from "../data/game";
 import EmployeeComponent from "./Employee";
 
@@ -15,6 +27,7 @@ const Game = () => {
         <div>Hello World</div>
       </OrgchartLayout> */}
     </div>
+>>>>>>> main
   );
 };
 

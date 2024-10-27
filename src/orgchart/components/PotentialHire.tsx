@@ -1,8 +1,15 @@
 // Employee Component.
 
 import type { PotentialHire } from "../data/types";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
 
 interface PotentialHireComponentProps {
   potentialHire: PotentialHire;
@@ -11,7 +18,7 @@ interface PotentialHireComponentProps {
 const PotentialHireComponent = ({ potentialHire }: PotentialHireComponentProps) => {
   const { name, type, cash, culture, trouble, cost, numberRemaining } = potentialHire;
   return (
-    <Card className="min-w-40">
+    <Card className="">
       <CardHeader>
         <CardTitle>{name}</CardTitle>
         <CardDescription>{type}</CardDescription>
